@@ -1,6 +1,8 @@
 # SpiceWorld-Website
 HTML, CSS, JAVASCRIPT
 
+TO VIEW THE PAGE:
+https://officialmabz.github.io/SpiceWorld-Website/ 
 
 Background:
 
