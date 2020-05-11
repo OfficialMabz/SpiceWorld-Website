@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The <span class="highlight">Engine</span></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="store.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript">
+		function ShowMessage()
+		{
+			alert ("Your message has been sent")
+		}
+	
+	</script>
+</head>
+<body>
+ <header>
+   <div class="container">
+	   <center>
+       <img src="Images/logo2.PNG" width="230" height="200" alt=""/> </center>
+	 </div>
+  </header>
+ 
+ <nav>
+   <center>
+    <div class="topnav">
+     <a  href="index.html">HOME</a>
+     <a class="active" href="Contact.html">CONTACT US</a>
+     <a href="Herbs.html">HERBS</a>
+     <a href="spices.html">SPICES</a>
+	   <a href="checkout.html">CHECKOUT</a>
+    </div>
+   </center>
+	  <div class="icon-bar">
+     <a href="https://en-gb.facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a> 
+     <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a> 
+     <a href="" class="google"><i class="fa fa-google"></i></a> 
+     <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+     <a href="https://www.youtube.com/?gl=GB&hl=en-GB" class="youtube"><i class="fa fa-youtube"></i></a> 
+    </div>
+ </nav>
+  
+ <div class="container">
+  <form action="mailto:f52136@lutonsfc.ac.uk" >
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+		  <option value="India">India</option>
+      <option value="Bangladesh">Bangladesh</option>
+      <option value="UK">UK</option>
+    </select>
+
+    <label for="subject">Subject</label>
+       <textarea id="subject" name="subject" placeholder="subject" style="height:30px"></textarea> 
+      
+    <input type="submit" value="SendMail">
+
+  </form>
+  </div>
+</body>

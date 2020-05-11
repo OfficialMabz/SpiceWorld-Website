@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>The <span class="highlight">Engine</span></title>
+
+<script type="text/JavaScript"><!-- 
+
+        var Cost, GST, PST, Grand_Total;
+
+ function tally()
+        {
+        Cost = 0;
+        if (document.orderform.Item1.checked) { Cost = Cost + 3;    }
+        if (document.orderform.Item2.checked) { Cost = Cost + 3;    }
+        if (document.orderform.Item3.checked) { Cost = Cost + 3;               }
+        if (document.orderform.Item4.checked) { Cost = Cost + 3;               }
+        if (document.orderform.Item5.checked) { Cost = Cost + 3;    }
+        if (document.orderform.Item6.checked) { Cost = Cost + 3;    }
+        if (document.orderform.Item7.checked) { Cost = Cost + 5;               }
+        if (document.orderform.Item8.checked) { Cost = Cost + 5;               }
+        if (document.orderform.Item9.checked) {  Cost = Cost + 5;               }
+	if (document.orderform.Item10.checked) {  Cost = Cost + 5;               }
+	if (document.orderform.Item11.checked) {  Cost = Cost + 5;               }
+	if (document.orderform.Item12.checked) {  Cost = Cost + 5;               }
+
+        GST = (Cost * 0.07);
+        PST = (Cost * 0.07);
+
+        Cost = dollar(Cost);
+        GST = dollar(GST);
+        PST = dollar(PST);
+        Grand_Total = parseFloat(Cost) + parseFloat(GST) + parseFloat(PST);
+        Grand_Total = dollar(Grand_Total);
+
+        document.orderform.Total.value = "£" + Cost;
+        document.orderform.GST.value = "£" + GST;
+        document.orderform.PST.value = "£" + PST;
+        document.orderform.GrandTotal.value = "£" + Grand_Total;
+        }
+
+  function dollar (amount)
+  {
+        amount = parseInt(amount * 100);
+        amount = parseFloat(amount/100);
+        if (((amount) == Math.floor(amount)) && ((amount - Math.floor (amount)) == 0))
+        {
+                amount = amount + ".00"
+                return amount;
+        }
+        if ( ((amount * 10) - Math.floor(amount * 10)) == 0)
+        {
+                amount = amount + "0";
+                return amount;
+        }
+        if ( ((amount * 100) - Math.floor(amount * 100)) == 0)
+        {
+                amount = amount;
+                return amount;
+        }
+        return amount;
+ }
+
+//--></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	
+ <header>
+   <div class="container">
+	 <center>
+    <img src="Images/logo2.PNG" width="230" height="200" alt=""/> </center>
+	</div>
+	</div>
+ </header>
+ 
+ <nav> 
+    <center>
+     <div class="topnav">
+         <a  href="index.html">HOME</a>
+         <a href="Contact.html">CONTACT US</a>
+         <a href="Herbs.html">HERBS</a>
+         <a href="spices.html">SPICES</a>
+	 <a class="active"  href="checkout.html">CHECKOUT</a>
+      </div>
+    </center>
+     <div class="icon-bar">
+       <a href="https://en-gb.facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a> 
+       <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a> 
+       <a href="" class="google"><i class="fa fa-google"></i></a> 
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+       <a href="https://www.youtube.com/?gl=GB&hl=en-GB" class="youtube"><i class="fa fa-youtube"></i></a> 
+     </div>
+ </nav>
+
+ <center>
+ <h2> Checkout </h2>
+   <form method="post" name="orderform" action="mailto:f52136@lutonsfc.ac.uk" enctype="text/plain">
+   <table border="0"><tr><td colspan="4">
+      <p><input type="checkbox" name="Item1" value="Parsely" onclick="tally()"> Parsely (£3.00)
+      <p><input type="checkbox" name="Item2" value="Dill" onclick="tally()"> Dill  (£3.00)
+      <p><input type="checkbox" name="Item3" value="Coriander" onclick="tally()"> Coriander (£3.00)
+      <p><input type="checkbox" name="Item4" value="Mint" onclick="tally()"> Mint  (£3.00)
+      <p><input type="checkbox" name="Item5" value="Rosemary" onclick="tally()"> Rosemary (£3.00)
+      <p><input type="checkbox" name="Item6" value="Basil" onclick="tally()"> Basil  (£3.00)
+      <p><input type="checkbox" name="Item7" value="Cumin Powder" onclick="tally()"> Cumin Powder  (£5)
+      <p><input type="checkbox" name="Item8" value="Cardimon Powder" onclick="tally()"> Cardimon Powder  (£5)
+       <p><input type="checkbox" name="Item9" value="Clove Powder" onclick="tally()"> Clove Powder  (£5)														 
+      <p><input type="checkbox" name="Item10" value="Cassia Bark Powder" onclick="tally()"> Cassia Bark Powder  (£5)																			 
+      <p><input type="checkbox" name="Item11" value="Termeric Powder" onclick="tally()"> Termeric Powder  (£5)
+      <p><input type="checkbox" name="Item12" value="BlackPaper Powder" onclick="tally()"> Black Papper Powder  (£5)
+   </td></tr>
+   <tr><td> Total <input type="text" name="Total" value="£0" size="7"></td>
+   <td> PST (7%) <input type="text" name="PST" value="£0"  size="6"></td>
+   <td colspan="2"> GST (7%) <input type="text" name="GST" value="£0"  size="6"></td></tr>
+   <tr><td> Grand Total <input type="text" name="GrandTotal" value="£0" size="8"></td></tr>
+
+   <tr><td>Company Name:</td><td colspan="3"><input type="Text" name="Company" size="35" maxlength="40"></td></tr>
+
+   <tr><td>Contact Name:</td><td colspan="3">First <input type="Text" name="FirstName" size="15" maxlength="20"> Last 
+   <input type="Text" name="LastName" size="15" maxlength="20"></td></tr>
+
+   <tr><td>Address</td><td><input type="Text" name="Street" size="20" maxlength="40"></td></tr>
+
+   <tr><td>City</td><td><input type="Text" name="City" size="20" maxlength="20"></td><td>Province/State:</td>
+   <td><input type="Text" name="Province" size="20" maxlength="40"></td></tr>
+
+   <tr><td>Country:</td><td><input type="Text" name="Country" size="20" maxlength="20"></td><td>Post Code:</td>
+   <td><input type="Text" name="Code" size="9" maxlength="10"></td></tr>
+
+   <tr> <td>Phone:</td><td><input type="Text" name="Phone" size="8" maxlength="10"></td>
+
+   <tr><td>Email Address:</td><td colspan=2><input type="Text" name="Email" size="30" maxlength="30"></td></tr>
+    <tr><td colspan="4" height="3"><hr></td></tr>
+    <tr><td colspan="2" align="center"><input type="Submit" value="Send Order"></td><td colspan="2" align="center"><input type="RESET" value="Reset Order"></td></tr> </table>
+    </form>
+   </CENTER>
+</body>
+</html>
